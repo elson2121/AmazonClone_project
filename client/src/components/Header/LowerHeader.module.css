@@ -1,0 +1,42 @@
+.lower_header{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+.lower_header ul li:first-child {
+    display: flex;
+    align-items: center;
+    /* Change the value below to control the distance */
+    gap: 2px;
+    padding: 8px 9px; 
+}
+.lower_header ul {
+    display: flex;
+    text-align: center;
+    
+    align-items: center;
+    gap: 20px;
+    background-color: #232F3E;
+    width: 100%;
+    height: 40px;
+   padding : 0px 3px 2px;
+}
+.lower_header ul li {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.lower_header ul li  {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+.lower_header ul li:hover {
+    cursor: pointer;
+    padding: 4px;
+    border: 2px solid #fff; 
+}

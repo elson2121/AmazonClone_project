@@ -1,0 +1,263 @@
+/*
+  Header.module.css
+  This file styles the entire header section to match the Amazon design
+*/
+
+.header_container {
+    background-color: #131921;
+    color: #fff;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    font-family: Arial, sans-serif;
+}
+
+/* ------------------- Left Side: Logo & Delivery ------------------- */
+.logo_container {
+    display: flex;
+    align-items: flex-end; /* Aligns the two items to the bottom */
+    gap: 5px;
+    padding: 5px 10px 5px 0;
+    cursor: pointer;
+}
+
+.logo_container img {
+    width: 90px;
+    margin-top: 5px;
+}
+
+.delivery {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    line-height: 1.2; /* Adjust line height for better spacing */
+}
+
+.delivery p {
+    font-size: 10px;
+    color: #ccc;
+    margin: 0;
+}
+
+.delivery span {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Icon for the location */
+.location_icon {
+    font-size: 16px;
+    color: #fff;
+}
+
+/* ------------------- Middle: Search Bar ------------------- */
+.search_container {
+    display: flex;
+    flex-grow: 1;
+    height: 40px; /* Set a fixed height for the whole search bar */
+    margin: 0 15px;
+    border-radius: 6px;
+    overflow: hidden; /* This makes the inner elements respect the container's border-radius */
+       /* justify-content: center; */
+    align-items: center;
+}
+
+.search_container select {
+    background-color: #e6e6e6;
+    border: none;
+    padding: 0 10px;
+    outline: none;
+    padding: 9px;
+}
+
+.search_container input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Adds the orange border on focus */
+.search_container:focus-within {
+    border: 3px solid #f68800;
+}
+
+.search_container .fa-search {
+    background-color: #febd69;
+    padding: 0 20px;
+    color: #111;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.search_container:hover {
+    background-color: hsl(34, 85%, 46%);
+   color: hsl(34, 85%, 46%);
+   padding: 3px;
+}
+
+
+/* ------------------- Right Side: Links & Cart ------------------- */
+.header_container > div:nth-child(3) > div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header_container > div:nth-child(3) a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border: 1px solid transparent; /* This creates the space for the hover effect */
+    transition: all 0.1s ease;
+}
+
+.header_container > div:nth-child(3) a:hover {
+    border: 1px solid #fff;
+}
+
+.header_container > div:nth-child(3) a p {
+    font-size: 12px;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.header_container > div:nth-child(3) a span {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.americaflag {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    border: 1px solid transparent;
+}
+
+.americaflag:hover {
+    border: 1px solid #fff;
+}
+
+.americaflag img {
+    width: 25px;
+}
+
+.americaflag section {
+    display: flex;
+    align-items: center;
+    padding:0px;
+    width: 12px;
+ 
+}
+
+/* Cart icon and count */
+.cart_link {
+    display: flex;
+    align-items: flex-end; /* Aligns the text and icon to the bottom */
+    position: relative;
+    padding: 5px;
+    border: 1px solid transparent;
+}
+.search_icon {
+    background-color: #febd69;
+    padding: 0 20px;
+    color: #111; 
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px;
+}
+.cart_link span {
+    font-weight: bold;
+    font-size: 16px;
+    color: #febd69; /* Sets the cart number to orange */
+}
+.cart a  {
+    border: 1px solid #fff;
+    background-color: #111;
+}
+
+/* Header.module.css */
+/* Header.module.css */
+
+/* ... all of your existing CSS ... */
+
+/* ------------------- Right Side: Links & Cart ------------------- */
+.header_nav_links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Style the Cart Link */
+.cart_link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex; /* Use Flexbox to align icon and text */
+    align-items: flex-end; /* Aligns them to the bottom */
+    position: relative;
+    padding: 5px;
+    border: 1px solid transparent;
+}
+
+/* Hover effect for the cart link */
+.cart_link:hover {
+    border: 1px solid #fff;
+}
+
+/* The cart icon itself */
+.cart_icon {
+    font-size: 25px; /* Make the icon larger */
+    position: relative;
+    top: 1px; /* Adjust vertical position */
+    margin-right: -3px; 
+}
+
+/* The cart count number (0) */
+.cart_link span {
+    font-weight:900;
+    font-size: 40px;
+    color: #F06E18;  
+    position: absolute;
+    top: 3px; /* Position the number over the icon */
+    right: 10px;
+}
+/* Header.module.css */
+
+.language_select {
+    background-color: transparent; 
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    outline: none; 
+    cursor: pointer;
+
+    /* This is the key property to remove the default background and arrow */
+    /* appearance: none; */
+}
+@media screen and (max-width: 576px) {
+  .header_container {
+    display: flex;
+    flex-direction: column !important;
+    height: auto;
+  }
+  .lower_container ul li:not(:first-child) {
+    display: none;
+  }
+  .language {
+    display: none;
+  }
+}
