@@ -4,6 +4,7 @@ import { SlLocationPin } from "react-icons/sl";
 import { BsCart } from "react-icons/bs";
 import classs from './Header.module.css'
 import LowerHeader from './LowerHeader';
+import { Link } from 'react-router-dom';
 const Header = () => {
   return (
    <>
@@ -11,8 +12,8 @@ const Header = () => {
 <div className={classs.header_container}>
 {/* logo  section  */}
 <div className={classs.logo_container}> 
-    <a href=""> 
-        <img src="https://pngimg.com/uploads/amazon/amazon_PNG25.png" alt="amazon log" /></a>
+    <Link to="/"> 
+        <img src="https://pngimg.com/uploads/amazon/amazon_PNG25.png" alt="amazon log" /></Link>
 <div className={classs.delivery}> 
      <span className={classs.location_icon}> <SlLocationPin />
   </span> 
@@ -47,19 +48,19 @@ const Header = () => {
 
  
     {/* the three components  */}
-<a href=""><div>
+<Link  to=""><div>
     <p>sing in </p>
-    <span>Account & Lists </span></div></a>
+    <span>Account & Lists </span></div></Link>
 {/* orders  */}
-<a href="">
+<Link to="/orders">
     <p>returns</p>
     <span> & Orders</span>
-</a>
+</Link>
  {/* cart */}
-                            <a to={"/cart"} className={classs.cart_link}> 
+                            <Link  to={"/cart"} className={classs.cart_link}> 
                                 <BsCart className={classs.cart_icon} /> {/* Add the cart icon */}
                                 <span> 0</span> {/* The cart count */}
-                            </a>
+                            </Link>
    </div>
 </div>
    </div>
