@@ -1,0 +1,17 @@
+ 
+.results_container {
+    /* Make the container a flexbox */
+    display: flex;
+
+    /* Allow items to wrap to the next line */
+    flex-wrap: wrap;
+
+    /* Add a small gap between the cards */
+    gap: 15px;
+
+    /* Center the items if you want */
+    justify-content: center;
+}
+.resutls_container div {
+    margin:0 auto;
+}
