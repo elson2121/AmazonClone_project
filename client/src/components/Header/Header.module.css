@@ -26,7 +26,37 @@
 .logo_container img {
     width: 90px;
     margin-top: 5px;
+    
 }
+/* This is the corrected hover rule that will work with your original button and class names. */
+.card_container button:hover {
+  /* Add your desired hover styles here */
+  border: 1px solid #fff;
+}
+
+/* Make sure your button has a default state (e.g., hidden) */
+.card_container button {
+  display: none;
+}
+.fixed{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.delivery:hover {
+    border: 1px solid #fff;
+    padding: 4px;
+    margin: 4px;
+}
+.logo_container  img:hover {
+    border: 1px solid #fff;
+    margin: 4px;
+}
+/* Option 1: Apply border to the image on hover of its parent link */
+.header_logo_link:hover img {
+    border: 1px solid #fff;
+} 
+
 
 .delivery {
     display: flex;

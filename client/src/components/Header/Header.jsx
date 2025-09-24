@@ -1,14 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { BsSearch } from "react-icons/bs";
 import { SlLocationPin } from "react-icons/sl";
 import { BsCart } from "react-icons/bs";
 import classs from './Header.module.css'
 import LowerHeader from './LowerHeader';
 import { Link } from 'react-router-dom';
+import {DataContext} from '../Dataprovider/Dataprovider'
 const Header = () => {
+const [{basket}, dispatch]=useContext(DataContext)
+// to show the cart read the write or the right total number of the item in the cart 
+const totalItem=basket?.reduce((amount,item)=>{
+    return item.amount+amount 
+},0)
   return (
    <>
-   <section> 
+   <section className={classs.fixed}> 
 <div className={classs.header_container}>
 {/* logo  section  */}
 <div className={classs.logo_container}> 
@@ -59,7 +65,7 @@ const Header = () => {
  {/* cart */}
                             <Link  to={"/cart"} className={classs.cart_link}> 
                                 <BsCart className={classs.cart_icon} /> {/* Add the cart icon */}
-                                <span> 0</span> {/* The cart count */}
+                                <span> {totalItem} </span> {/* The cart count */}
                             </Link>
    </div>
 </div>

@@ -1,12 +1,21 @@
 import React from 'react'
+import { useContext } from 'react'
+
 import Rating from '@mui/material/Rating'
 import CurrencyFormat from '../CurrenctyFormat/CurrenctyFormat'
 import classes from './Product.module.css'
 import { Link } from 'react-router-dom'
+import { Type } from '../../Utils/actiontype'
+import { DataContext } from '../Dataprovider/Dataprovider'
 // renderDesc
-function ProductCard({product, flex, renderDesc}) { // Note: Removed the extra space after the comma
+function ProductCard({product, flex, renderDesc,renderAdd}) { // Note: Removed the extra space after the comma
     const {title, id, price, image, rating,descrition} = product;
-    console.log(product);
+    const [state, dispatch ] = useContext(DataContext);
+    console.log(state);
+    const addToCart = () => {
+        dispatch({type:Type.ADD_TO_BASKET,
+            item: {  title, id, price, image, rating,descrition } });
+    }
 
     return (
         // FIX: The entire expression is wrapped in {}.
@@ -23,9 +32,13 @@ function ProductCard({product, flex, renderDesc}) { // Note: Removed the extra s
                     <Rating value={rating?.rate} precision={0.1}/>
                     <small> {rating?.count} </small>
                 </div>
+                {/* price format lists that reach us */}
                 <CurrencyFormat amount={price}/>
             </div>
-            <button className={classes.button}>add to card</button>
+            {
+                 renderAdd &&  <button className={classes.button} onClick={addToCart}>add to card</button>
+            }
+          
         </div> 
     );
 }

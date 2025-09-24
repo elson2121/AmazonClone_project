@@ -27,7 +27,7 @@ const Product = () => {
                     return(
                         // The extra </div> was here. I have removed it.
                          
-                        <ProductCard product={singleproduct} key={singleproduct.id} />
+                        <ProductCard  renderAdd= {true}product={singleproduct} key={singleproduct.id} />
                     )
                 })
             }

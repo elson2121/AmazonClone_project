@@ -1,3 +1,6 @@
+/* --- Product.module.css --- */
+
+/* General Card Styles */
 .card_container {
     width: 250px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -7,17 +10,7 @@
     position: relative;
 }
 
-.card_container :hover button {
-    display: block;
-}
-
-.card_container img {
-    padding: 10px;
-    width: 100%;
-    height: 200px;
-    object-fit: contain;
-}
-
+/* Button hidden by default */
 .button {
     display: none;
     padding: 5px 10px;
@@ -33,12 +26,20 @@
     left: 0;
 }
 
+/* FIX: The correct rule to show the button on hover */
+.card_container:hover .button {
+    display: block;
+}
+
 .button:hover {
     background-color: var(--primary-shade, #e68a00);
 }
 
-.card_container:hover .button {
-    display: block;
+.card_container img {
+    padding: 10px;
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
 }
 
 .rating {
@@ -47,7 +48,6 @@
     padding: 10px 0px;
 }
 
-/* This is the container for the products (likely in Results.module.css, but okay here) */
 .product_container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -57,34 +57,35 @@
     justify-items: center;
 }
 
-/* //for the flex property the css part  */
+/* Flexed styles for the cart */
 .product_flexed {
     box-shadow: none;
     height: auto;
     display: flex;
     gap: 50px;
     width: 100%;
-    height: 50vh; /* Corrected 'hv' to 'vh' (viewport height) */
+    height: 50vh;
 }
 
 .product_flexed h3 {
     padding: 20px 0px;
 }
 
-/* CORRECTED SELECTOR: Ensure this targets the button inside the flexed product card */
-.product_flexed .button {
-    display: block;
-    position: static;
-    width: 150px;
- height: 50px;
-    margin-top: 30vh;
-    margin-right: 55px;
+/* Styles for cart-specific buttons (you'll need to create these) */
+.product_flexed .item_btns {
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px;
+    align-items: center; 
+    min-width: 120px;
+    padding-top: 20px;
+    align-self: flex-start;
 }
 
-/* CORRECTED SELECTOR: Targets the image inside the flexed product card */
 .product_flexed img {
     width: 340px !important;
-    height: auto;
+    height: 240px;
+    margin-top: 20px;
 }
 
 @media screen and (max-width: 768px) {
