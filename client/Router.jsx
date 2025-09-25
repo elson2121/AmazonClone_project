@@ -19,6 +19,7 @@ function Routering() {
                 <Route path='/category/:category' element={<Results/>}/>
                 <Route path ='/product/:id' element={<ProductDetails/>}/>
                 <Route path='/orders' element={<Orders/>}/>
+                <Route path='/signUp' element={<SignUp/>}/>
                 <Route path='/payment' element={<Payment/>}/>
                 <Route path='/cart' element={<Cart/>}/>
                 <Route path='/auth' element={<SignUp/>}/>

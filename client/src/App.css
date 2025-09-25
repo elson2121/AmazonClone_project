@@ -1,4 +1,6 @@
 *{
     margin: 0px;
     padding:0px;
+    /* the following code is used to handel if the line is long more than the border it keep it in the border */
+        box-sizing: border-box; 
 }

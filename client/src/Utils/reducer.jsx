@@ -2,6 +2,7 @@ import { Type } from "./actiontype";
 
 export const initailState={
     basket:[],
+    user:null
 }
 export const reducer = (state, action) => {
 switch (action.type) {
@@ -38,6 +39,13 @@ switch (action.type) {
                 ...state,
                 basket:newBasket 
             }
+
+            //FOR USER AUTH AND OTHER SIMILARTHINGS
+case Type.SET_USER:
+    return {
+        ...state,
+        user:action.user
+    }
 
 
         //check if the item is  exists  

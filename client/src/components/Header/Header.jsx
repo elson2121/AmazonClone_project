@@ -6,8 +6,9 @@ import classs from './Header.module.css'
 import LowerHeader from './LowerHeader';
 import { Link } from 'react-router-dom';
 import {DataContext} from '../Dataprovider/Dataprovider'
+import { auth } from '../../Utils/firebase';
 const Header = () => {
-const [{basket}, dispatch]=useContext(DataContext)
+const [{user,basket}, dispatch]=useContext(DataContext)
 // to show the cart read the write or the right total number of the item in the cart 
 const totalItem=basket?.reduce((amount,item)=>{
     return item.amount+amount 
@@ -23,7 +24,7 @@ const totalItem=basket?.reduce((amount,item)=>{
 <div className={classs.delivery}> 
      <span className={classs.location_icon}> <SlLocationPin />
   </span> 
-    <div>    <p>Delivered to</p>
+    <div>    <p>Delivered to</p> 
     <span>Ethiopia</span>         </div>
    
     </div>
@@ -34,7 +35,7 @@ const totalItem=basket?.reduce((amount,item)=>{
   
     <select name="" id=""> <option value="">All</option> </select>
     <input type="text" name="" id="" placeholder='Search Product' />
-   <BsSearch className={classs.search_icon} />
+   <BsSearch className={classs.search_icon } />
     {/* icon  */}
     
      </div>
@@ -54,9 +55,30 @@ const totalItem=basket?.reduce((amount,item)=>{
 
  
     {/* the three components  */}
-<Link  to=""><div>
-    <p>sing in </p>
-    <span>Account & Lists </span></div></Link>
+<Link  to={!user && "/signUp"}>
+<div>
+    {/* if we have a user  */}
+{user?(  
+    
+    <>  
+<p> Hello {user?.email?.split("@")[0]} </p>
+<span onClick={()=>auth.signOut()}>SignOut</span>
+</>
+):(
+    <>
+    <p> Hello,sing in </p>
+    <span>Account & Lists </span> 
+    </>
+
+)
+}
+
+</div>
+ 
+
+
+    
+    </Link>
 {/* orders  */}
 <Link to="/orders">
     <p>returns</p>
